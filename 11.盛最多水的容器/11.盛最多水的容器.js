@@ -12,7 +12,4 @@ var maxArea = function (height) {
   return max;
 };
 
-
-
-
 console.log("1", maxArea([1, 2, 4, 3]));
