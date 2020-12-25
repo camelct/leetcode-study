@@ -88,7 +88,7 @@ LRUCache.prototype.get = function (key) {
     }
  */
 LRUCache.prototype.put = function (key, value) {
-  newNode = new Node(key, value);
+  const newNode = new Node(key, value);
   const node = this.map[key];
   if (node) {
     this.cache.remove(node);
@@ -105,15 +105,15 @@ LRUCache.prototype.put = function (key, value) {
 };
 
 const obj = new LRUCache(2);
-console.log('obj.get(1)', obj.get(1));
+console.log("obj.get(1)", obj.get(1));
 obj.put(1, 0);
-console.log('obj.get(1)', obj.get(1));
-console.log('obj.cache 1', obj.cache);
+console.log("obj.get(1)", obj.get(1));
+console.log("obj.cache 1", obj.cache);
 obj.put(2, 2);
-console.log('obj.cache 2', obj.cache);
+console.log("obj.cache 2", obj.cache);
 obj.put(3, 3);
-console.log('obj.cache 3', obj.cache);
+console.log("obj.cache 3", obj.cache);
 obj.put(4, 4);
-console.log('obj.cache 4', obj.cache);
+console.log("obj.cache 4", obj.cache);
 obj.put(4, 4);
-console.log('obj.get(1)', obj.get(1));
+console.log("obj.get(1)", obj.get(1));

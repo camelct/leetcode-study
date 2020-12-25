@@ -2,7 +2,7 @@
  * @param {number} k
  * @param {number[]} nums
  */
-var KthLargest = function(k, nums) {
+var KthLargest = function (k, nums) {
   this.heap = new HeapMin(nums, k);
   this.k = k;
 };
@@ -11,11 +11,11 @@ var KthLargest = function(k, nums) {
  * @param {number} val
  * @return {number}
  */
-KthLargest.prototype.add = function(val) {
+KthLargest.prototype.add = function (val) {
   return this.heap.add(val);
 };
 
-var HeapMin = function(arr, size) {
+var HeapMin = function (arr, size) {
   this.size = size;
   this.heapList = arr.slice(0, size);
   this.heapifyAll();
@@ -25,7 +25,7 @@ var HeapMin = function(arr, size) {
   }
 };
 
-HeapMin.prototype.heapify = function(index) {
+HeapMin.prototype.heapify = function (index) {
   const arr = this.heapList;
   let least = index;
   let subLeft = 2 * index + 1;
@@ -38,11 +38,11 @@ HeapMin.prototype.heapify = function(index) {
   }
 };
 
-HeapMin.prototype.heapifyAll = function() {
+HeapMin.prototype.heapifyAll = function () {
   for (let i = ~~(this.size / 2) - 1; i >= 0; i--) this.heapify(i);
 };
 
-HeapMin.prototype.add = function(n) {
+HeapMin.prototype.add = function (n) {
   if (this.heapList.length < this.size) {
     console.log("this.heapList", this.heapList);
     this.heapList.unshift(n);

@@ -1,3 +1,5 @@
+from utils.createLinkList import create_link_list, print_link_list
+
 """ 
 https://leetcode-cn.com/problems/reverse-linked-list/
 
@@ -54,3 +56,7 @@ class Solution(object):
         head.next.next = head
         head.next = None
         return cur
+
+
+head = create_link_list([1, 2, 3, 4, 5])
+print_link_list(head)
